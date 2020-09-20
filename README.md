@@ -1,11 +1,11 @@
 # Accelerated C++ Exercise Answer
 
-##Chapter 1:
+## Chapter 1:
 
 P4 P5 P34 表达式及其副作用：
 P4 P5说明了std::endl这个操作数在控制流std::cout所产生的副作用：将缓冲区刷新并输出到输出设备上。
 
-##Chapter 2:
+## Chapter 2:
 
 P35 2-3
 ```
@@ -14,7 +14,7 @@ cin >> pad ;
 需要把const去掉才可以cin
 ```
 
-##Chapter 4:
+## Chapter 4:
 
 1.写第四章的grade程序的时候：
 main.cpp在include自己的头文件的时候，相应的.h中的include会拿过来，但是函数的实现也就是.cpp中的include不会拿过来，需要手动添加。
