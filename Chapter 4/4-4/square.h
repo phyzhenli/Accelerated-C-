@@ -1,5 +1,5 @@
-#ifndef GUARD_square_h
-#define GUARD_square_h
+#ifndef GUARD_square
+#define GUARD_square
 
 #include <algorithm>
 

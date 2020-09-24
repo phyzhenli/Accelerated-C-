@@ -15,7 +15,6 @@ using std::setprecision;
 using std::domain_error;
 using std::max;
 using std::sort;
-using std::setw;
 
 int main()
 {
@@ -30,9 +29,15 @@ int main()
 	}
 	
 	sort(students.begin(), students.end(), compare);
+	
+	vector<string> spaces;
+	for (std::vector<student_info>::size_type i = 0; i != students.size(); ++i) {
+		string space(maxlen+1-students[i].name.size(), ' ');
+		spaces.push_back(space);
+	}
 
 	for (std::vector<student_info>::size_type i = 0; i != students.size(); ++i) {
-		cout << setw(maxlen) << students[i].name << " ";
+		cout << students[i].name + spaces[i];
 
 		try {
 			double final_grade = grade(students[i]);
