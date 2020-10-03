@@ -29,4 +29,6 @@ main.cpp在include自己的头文件的时候，相应的.h中的include会拿�
 
 ## Chapter 5
 
-1.ret.insert(ret.end(), split(s).begin(), split(s).end())编译通过跑不过，fatol error，原因应该是split(s).begin()不是左值，是临时的。
+5-0.ret.insert(ret.end(), split(s).begin(), split(s).end())编译通过跑不过，fatol error，原因应该是split(s).begin()不是左值，是临时的。
+
+5-3.P88 list不支持索引而vector支持索引，所以没有list[i]。
