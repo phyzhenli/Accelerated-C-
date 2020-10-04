@@ -33,9 +33,9 @@ int main()
 		cout << endl;
 	}
 
-	students.sort(compare);
-	//sort(students.begin(), students.end(), compare);
-	fail = extract_fails(students);	
+	//students.sort(compare);
+	sort(students.begin(), students.end(), compare);
+	students = extract_fails(students);	
 
 	//list不支持索引，所以不能用list[i]
 	
@@ -51,20 +51,6 @@ int main()
 			cout << e.what() << endl;
 		}
 	}
-	
-	cout << "FAIL:" << endl;
-	for (mystruc::iterator iter = fail.begin(); iter != fail.end(); ++iter) {
-		cout << setw(maxlen) << (*iter).name << " ";
-
-		try {
-			double final_grade = grade(*iter);
-			streamsize prec = cout.precision();
-			cout << setprecision(3) << final_grade << setprecision(prec) << endl;
-		} catch (domain_error e) {
-			cout << e.what() << endl;
-		}
-	}
-
 
 
 	return 0;
