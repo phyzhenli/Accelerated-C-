@@ -52,6 +52,6 @@ copy(u.begin(), u.end(), v.begin());
 
 解决办法：
 
-1.对v进行初始化：vector<int> v(10),v的大小要和upipei；
+1.对v进行初始化：vector<int> v(10),v的大小要和u一致；
 
 2.用back_inserter(v)。
