@@ -54,4 +54,12 @@ copy(u.begin(), u.end(), v.begin());
 
 1.对v进行初始化：vector<int> v(10),v的大小要和u一致；
 
-2.用back_inserter(v)。
+2.用back_inserter(v);
+
+3.用v.insert(v.end(), u.begin(), u.end())。
+
+6-9.copy或者insert要同类型的才可以，比如不能：copy(ret.begin(), ret.end(), back_inserter(str))，
+
+但是可以：copy(ret[0].begin(), ret[0].end(), back_inserter(str))，
+
+也可以：str.insert(str.end(), (*iter).begin(), (*iter).end())。
