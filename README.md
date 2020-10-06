@@ -49,5 +49,9 @@ vector<int> v;
 copy(u.begin(), u.end(), v.begin());
 ```
 可以编译，但执行出错，原因在P107，v没有元素，所以复制会出错。
-解决办法：1.对v进行初始化：vector<int> v(10),v的大小要和upipei；
+
+解决办法：
+
+1.对v进行初始化：vector<int> v(10),v的大小要和upipei；
+
 2.用back_inserter(v)。
