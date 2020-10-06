@@ -1,7 +1,7 @@
 #include "split.h"
 #include "frame.h"
-//#include "vcat.h"
-//#include "hcat.h"
+#include "vcat.h"
+#include "hcat.h"
 #include <iostream>
 
 using std::cin;
@@ -21,10 +21,10 @@ int main()
 	}
 
 	vector<string> vec = frame(ret);
-	//vector<string> vecc = vcat(ret, vec);
-	//vector<string> vech = hcat(ret, vec)
-	for (vector<string>::size_type i = 0; i != vec.size(); ++i)
-			cout << endl << vec[i] << endl;
+	vector<string> vecc = vcat(ret, vec);
+	vector<string> vech = hcat(ret, vec);
+	for (vector<string>::iterator iter = vec.begin(); iter != vec.end(); ++iter)
+			cout << endl << *iter << endl;
 	
 	
 	return 0;
