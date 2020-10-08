@@ -12,10 +12,10 @@ using std::endl;
 int main()
 {
     vector<int> u(10, 100);
-    vector<int> v;
+    vector<int> v(u.begin(), u.end());  //P184 初始化时复制
 
-    copy(u.begin(), u.end(), back_inserter(v));  //P107 错误
-
+    //copy(u.begin(), u.end(), back_inserter(v));  //P107
+    
     for (vector<int>::const_iterator iter = v.begin(); iter != v.end(); ++iter)
         cout << endl << *iter << endl;
 
