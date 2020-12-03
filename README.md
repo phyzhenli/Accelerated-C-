@@ -26,8 +26,12 @@ main.cpp在include自己的头文件的时候，相应的.h中的include会拿�
 
 ## Chapter 5
 
-5-0.ret.insert(ret.end(), split(s).begin(), split(s).end())编译通过跑不过，fatol error，原因应该是split(s).begin()不是左值，是临时的。  
-5-3.P88 list不支持索引而vector支持索引，所以没有list[i]。  
+5-0.  
+ret.insert(ret.end(), split(s).begin(), split(s).end())编译通过跑不过，fatol error，原因应该是split(s).begin()不是左值，是临时的。
+
+5-3.  
+P88 list不支持索引而vector支持索引，所以没有list[i]。
+
 5-6.
 ```
 vector.insert(vector.begin(), 8);  //把8塞到第一个元素的前面
@@ -50,7 +54,8 @@ copy(u.begin(), u.end(), v.begin());
 3.用v.insert(v.end(), u.begin(), u.end())；  
 4.初始化的时候复制：vector<int> v(u.begin(), u.end())。  //P184 初始化时复制
 
-6-9.copy或者insert要同类型的才可以，比如不能：copy(ret.begin(), ret.end(), back_inserter(str))，  
+6-9.  
+copy或者insert要同类型的才可以，比如不能：copy(ret.begin(), ret.end(), back_inserter(str))，  
 但是可以：copy(ret[0].begin(), ret[0].end(), back_inserter(str))，  
 也可以：str.insert(str.end(), (*iter).begin(), (*iter).end())。
 
@@ -58,3 +63,8 @@ copy(u.begin(), u.end(), v.begin());
 
 find_word_lines.  
 xref缺省函数参数：参考：https://blog.csdn.net/weikangc/article/details/45769431，定义和声明分开的时候，声明可以定义默认值，定义不再指定缺省参数。
+
+7-9.  
+int测试是32位，无符号最大值为2147483647；  
+long测试是64位，无符号最大值是9223372036854775807。  
+https://github.com/bitsai/book-exercises/blob/master/Accelerated%20C%2B%2B/chapter07/7-9.cpp    感觉不太对。
