@@ -74,6 +74,14 @@ https://github.com/bitsai/book-exercises/blob/master/Accelerated%20C%2B%2B/chapt
 # Chapter 8
 
 8-0.  
+median:  
 https://blog.csdn.net/tang05505622334/article/details/90478013  
 编译器编译的时候对每一个.cpp分开编译，用到某一个函数的时候只是留一个指令，等到连接的时候会通过对应函数的.obj的符号表将地址替换成真实函数的地址，最后生成一个.o文件。  
-c++标准对没有使用的模板函数，编译的时候就不会实例化，也就是说，如果所有的.cpp里面没有调用该函数的语句，那么所有的.obj里面就不会有该函数的二进制代码。所以一般在.h里面把模板函数的定义也写清楚，这样#include该.h文件时就可以把定义拿到，编译的时候可以直接进行实例化。
+c++标准对没有使用的模板函数，编译的时候就不会实例化，也就是说，如果所有的.cpp里面没有调用该函数的语句，那么所有的.obj里面就不会有该函数的二进制代码。所以一般在.h里面把模板函数的定义也写清楚，这样#include该.h文件时就可以把定义拿到，编译的时候可以直接进行实例化。  
+copy:  
+back_inserter产生的迭代器是输出迭代器，这个迭代器只支持*it和++it，没有办法--it，但包含输入迭代器的功能（P161)。  
+split:  
+打算把fdp3p7_lib中的split函数改成函数模板，split里面需要用到两个函数：space和not_space。本来想直接去掉split.cpp文件，把这两个函数的定义直接放在split.h里面，没想到编译的时候报这两个函数multiple definition，原因应该是在多个cpp中#include了split.h，导致出现多个space和not_space的定义。  
+解决办法：  
+1.把space和not_space放在split.cpp里面，并且在split.h声明一下。
+2.参考：https://jiadebin.github.io/2017/04/03/%E5%A4%B4%E6%96%87%E4%BB%B6%E4%B8%AD%E5%AE%9A%E4%B9%89%E5%87%BD%E6%95%B0%E5%BC%95%E5%8F%91%E7%9A%84multiple-definition/。只要split.h文件，引入inline关键字。

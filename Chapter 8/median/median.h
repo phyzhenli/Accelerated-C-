@@ -1,3 +1,6 @@
+#ifndef GUARD_median
+#define GUARD_median
+
 #include <stdexcept>
 #include <algorithm>
 #include <vector>
@@ -18,3 +21,5 @@ T median(std::vector<T> v)
     vec_sz mid = size/2;
     return size % 2 == 0 ? (v[mid] + v[mid-1]) / 2 : v[mid];
 }
+
+#endif
