@@ -98,3 +98,6 @@ transform:
 ```
 参考：https://www.cnblogs.com/zhang-xiao/archive/2013/04/02/2995851.html  
 标准的后缀++就是 “对操作对象做+1操作，并返回操作前的值”。
+
+accumulate:  
+引用不能是定值，比如accumulate(v.begin(), v.end(), 0)，这里0就不是引用。template中如果是引用编译会报错no instance。
