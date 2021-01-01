@@ -13,7 +13,8 @@ using std::endl;
 void write_analysis(ostream& out, const string& name, double analysis(const vector<student_info>&),
                     const vector<student_info>& did, const vector<student_info>& didnt)
 {
-    out << endl << name << ": median(did) = " << analysis(did) << ", median(didnt) = " << analysis(didnt) << endl;
+    out << endl << name << "(did) = " << analysis(did) << endl
+                << name << "(didnt) = " << analysis(didnt) << endl;
 }
 
 

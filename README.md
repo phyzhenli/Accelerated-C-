@@ -89,3 +89,12 @@ split:
 1.把space和not_space放在split.cpp里面，并且在split.h声明一下。  
 2.参考：https://jiadebin.github.io/2017/04/03/%E5%A4%B4%E6%96%87%E4%BB%B6%E4%B8%AD%E5%AE%9A%E4%B9%89%E5%87%BD%E6%95%B0%E5%BC%95%E5%8F%91%E7%9A%84multiple-definition/。  
 在split.h文件中引入inline关键字。
+
+8-2.
+
+transform:
+```  
+*dest++ = f(*begin++);
+```
+参考：https://www.cnblogs.com/zhang-xiao/archive/2013/04/02/2995851.html  
+标准的后缀++就是 “对操作对象做+1操作，并返回操作前的值”。
