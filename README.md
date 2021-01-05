@@ -90,6 +90,14 @@ split:
 2.参考：https://jiadebin.github.io/2017/04/03/%E5%A4%B4%E6%96%87%E4%BB%B6%E4%B8%AD%E5%AE%9A%E4%B9%89%E5%87%BD%E6%95%B0%E5%BC%95%E5%8F%91%E7%9A%84multiple-definition/。  
 在split.h文件中引入inline关键字。
 
+split在getline读取到空行的时候也会写入到迭代器对应的容器中，导致出错，可以在getline判断一下：
+```
+if (!str.empty()) {
+    split(str, back_inserter(v));
+    ret.push_back(v);
+}
+```
+
 8-2.
 
 transform:
